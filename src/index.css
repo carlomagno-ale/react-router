@@ -1,5 +1,13 @@
 @import 'bootstrap';
 
+:root {
+
+    --mid-bg: rgb(239, 239, 239);
+    --light: #CBC3E3;
+    --bold: #800080;
+
+}
+
 
 .container {
 
@@ -8,5 +16,32 @@
 
 header {
 
-    background-color: #CBC3E3;
+    background-color: var(--light);
+    height: 3.2rem;
+}
+
+body {
+
+    background-color: var(--mid-bg);
+}
+
+.active {
+
+    font-weight: bold;
+    border-bottom: solid 0.2rem var(--bold);
+    color: var(--bold) !important;
+}
+
+.jumbotron {
+
+    background-image: url('https://picsum.photos/2000');
+    background-size: cover;
+    background-position: center;
+    height: 20rem;
+    width: 100%;
+}
+
+.title {
+
+    color: var(--bold);
 }
