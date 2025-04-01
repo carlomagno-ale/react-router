@@ -22,6 +22,10 @@ export default function About() {
                                 className="img-fluid"
                             />
                         </div>
+                        <div className="col-md-12 mt-5">
+                            <h2 className="text-center">Mission</h2>
+                            <p className="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium adipisci maiores ipsam quod libero tempore expedita molestias excepturi exercitationem veniam nulla nisi tenetur, facere dicta. At omnis labore dolorem quisquam dolor odio, delectus iusto dolorum natus officia accusamus, quo ut.</p>
+                        </div>
                     </section>
                 </div>
             </main>

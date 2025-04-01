@@ -8,6 +8,11 @@
 
 }
 
+body {
+
+    background-color: var(--mid-bg);
+    height: 100vh;
+}
 
 .container {
 
@@ -20,9 +25,19 @@ header {
     height: 3.2rem;
 }
 
-body {
+footer {
 
-    background-color: var(--mid-bg);
+    background-color: var(--light);
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+
+        color: var(--bold);
+    }
 }
 
 .active {
@@ -34,7 +49,7 @@ body {
 
 .jumbotron {
 
-    background-image: url('https://picsum.photos/2000');
+    background-image: url('https://picsum.photos/id/249/2000');
     background-size: cover;
     background-position: center;
     height: 20rem;
