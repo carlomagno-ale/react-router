@@ -12,16 +12,15 @@ export default function App() {
     <>
 
       <BrowserRouter>
-
         <Routes>
 
-          <Route Component={Layout} />
-          <Route path="/" Component={Home} />
-          <Route path="/post" Component={PostsList} />
-          <Route path="/about" Component={About} />
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="post" element={<PostsList />} />
+            <Route path="about" element={<About />} />
+          </Route>
 
         </Routes>
-
       </BrowserRouter>
 
     </>

@@ -4,8 +4,13 @@ export default function About() {
 
         <>
 
-            <h1>About</h1>
+            <main>
+                <div className="container text-center">
 
+                    <h1>About us</h1>
+
+                </div>
+            </main>
         </>
     )
 }

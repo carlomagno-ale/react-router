@@ -1,1 +1,12 @@
 @import 'bootstrap';
+
+
+.container {
+
+    width: 50% !important;
+}
+
+header {
+
+    background-color: #CBC3E3;
+}
