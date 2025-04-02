@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-const api_endpoint = 'http://localhost:3000/api/v1/posts'
+const api_endpoint = 'http://localhost:3000/api/v1/posts';
 
 
 export default function PostsList() {
@@ -28,13 +28,13 @@ export default function PostsList() {
                         {posts.map(post => (
                             <div className="col-4 mb-4" key={post.slug}>
                                 <div className="card">
-                                    <Link to={`/post/${post.slug}`}>
-                                        <div className="card-body">
+                                    <div className="card-body">
+                                        <Link to={`/post/${post.slug}`}>
                                             <img src={`http://localhost:3000${post.image}`} className="card-img-top" alt={post.slug} />
-                                            <h5 className="card-title fs-5">{post.title}</h5>
-                                            <p className="card-text">Scopri la ricetta</p>
-                                        </div>
-                                    </Link>
+                                        </Link>
+                                        <h5 className="card-title fs-5">{post.title}</h5>
+                                        <p className="card-text">Scopri la ricetta</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
