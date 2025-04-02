@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import About from "./pages/About";
 import PostsList from "./pages/PostsList";
 
+import SinglePost from "./pages/SinglePost";
+
 
 export default function App() {
 
@@ -18,6 +20,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="post" element={<PostsList />} />
             <Route path="about" element={<About />} />
+            <Route path="/post/:id" element={<SinglePost />} />
           </Route>
 
         </Routes>
