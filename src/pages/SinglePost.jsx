@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 
 export default function SinglePost() {
 
-    /*const [post, setPost] = useState()*/
+    const [post, setPost] = useState()
+    //console.log(post.image)
 
     const { slug } = useParams()
-    console.log(slug);
+    //console.log(slug);
 
     // chiamata ajax del segmento
     useEffect(() => {
@@ -15,6 +16,7 @@ export default function SinglePost() {
             .then(data => {
 
                 setPost(data)
+                //console.log(data)
 
             })
             .catch(err => {
@@ -25,12 +27,21 @@ export default function SinglePost() {
 
     return (
         <>
+            <main>
+                <div className="container">
+                    <div className="text-center my-3">
+                        <h1>{post.title}</h1>
 
-            <div className="text-center mt-3">
-                <h1>ID prodotto: {slug}</h1>
-            </div>
 
+                        <img src={`http://localhost:3000${post.image}`} alt={post.slug} />
 
+                    </div>
+
+                    <div className="mt-3">
+                        <p>{post.content}</p>
+                    </div>
+                </div>
+            </main>
         </>
     );
 }
