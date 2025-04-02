@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 export default function SinglePost() {
 
@@ -9,6 +9,8 @@ export default function SinglePost() {
     const { slug } = useParams()
     //console.log(slug);
 
+    const navigate = useNavigate();
+
     // chiamata ajax del segmento
     useEffect(() => {
         fetch(`http://localhost:3000/api/v1/posts/${slug}`)
@@ -16,7 +18,7 @@ export default function SinglePost() {
             .then(data => {
 
                 setPost(data)
-                //console.log(data)
+                console.log(data)
 
             })
             .catch(err => {
@@ -29,19 +31,29 @@ export default function SinglePost() {
         <>
             <main>
                 <div className="container">
-                    <div className="text-center my-3">
-                        <h1>{post.title}</h1>
 
+                    <div className="d-flex flex-column justify-content-center align-items-center">
+                        <h1 className="text-center my-3">{slug}</h1>
 
-                        <img src={`http://localhost:3000${post.image}`} alt={post.slug} />
-
-                    </div>
-
-                    <div className="mt-3">
-                        <p>{post.content}</p>
+                        <button onClick={() => navigate(-1)}>
+                            Torna alla pagina precedente
+                        </button>
                     </div>
                 </div>
             </main>
+
+            {/*
+
+                <div className="container text-center">
+                    <h1 className="my-3">{post.title}</h1>
+                    <img src={`http://localhost:3000${post.image}`} alt={post.slug} />
+                    <div className="mt-3">
+                        <p className="my-3">{post.content}</p>
+                    </div>
+                </div>
+
+            */}
+
         </>
     );
 }
