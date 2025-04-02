@@ -20,7 +20,7 @@ export default function App() {
             <Route index element={<Home />} />
             <Route path="post" element={<PostsList />} />
             <Route path="about" element={<About />} />
-            <Route path="/post/:id" element={<SinglePost />} />
+            <Route path="/post/:slug" element={<SinglePost />} />
           </Route>
 
         </Routes>

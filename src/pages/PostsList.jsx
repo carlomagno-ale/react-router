@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom";
+
+const api_endpoint = 'http://localhost:3000/api/v1/posts'
+
+
 export default function PostsList() {
+
+    const [posts, setPosts] = useState([])
+
+    useEffect(() => {
+        fetch(api_endpoint)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+
+                setPosts(data)
+            })
+    }, [])
 
     return (
 
@@ -6,78 +24,23 @@ export default function PostsList() {
             <main>
                 <div className="container">
                     <div className="row mt-5">
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 1</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
+
+                        {posts.map(post => (
+                            <div className="col-4 mb-4" key={post.slug}>
+                                <div className="card">
+                                    <Link to={`/post/${post.slug}`}>
+                                        <div className="card-body">
+                                            <img src={`http://localhost:3000${post.image}`} className="card-img-top" alt={post.slug} />
+                                            <h5 className="card-title fs-5">{post.title}</h5>
+                                            <p className="card-text">Scopri la ricetta</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 2</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 3</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 4</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 5</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 6</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 7</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-4">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 8</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-md-4 mb-5">
-                            <div className="card">
-                                <div className="card-body">
-                                    <h5 className="card-title">Post 9</h5>
-                                    <p className="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, eos.</p>
-                                </div>
-                            </div>
-                        </div>
+                        ))}
+
+
+
                     </div>
                 </div>
             </main>
