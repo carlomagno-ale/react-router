@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const api_endpoint = 'http://localhost:3000/api/v1/posts';
 
-
 export default function PostsList() {
 
     const [posts, setPosts] = useState([])
@@ -38,13 +37,9 @@ export default function PostsList() {
                                 </div>
                             </div>
                         ))}
-
-
-
                     </div>
                 </div>
             </main>
-
         </>
     )
-}
+};
