@@ -16,7 +16,7 @@ body {
 
 .container {
 
-    width: 50% !important;
+    width: 60% !important;
 }
 
 header {
@@ -64,4 +64,17 @@ footer {
 main {
 
     min-height: 70vh;
+}
+
+.card {
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    span {
+
+        font-size: 0.7rem;
+    }
 }
