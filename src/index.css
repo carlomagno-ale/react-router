@@ -60,3 +60,8 @@ footer {
 
     color: var(--bold);
 }
+
+main {
+
+    min-height: 70vh;
+}
