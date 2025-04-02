@@ -23,7 +23,7 @@ export default function PostsList() {
         <>
             <main>
                 <div className="container">
-                    <div className="row mt-5 jus">
+                    <div className="row mt-5 justify-content-center">
 
                         {posts.map(post => (
                             <div className="col-4 mb-4 " key={post.slug}>
